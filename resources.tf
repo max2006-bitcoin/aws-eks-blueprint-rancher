@@ -1,4 +1,5 @@
 
+
 ###  ---  Application  ---  ###
 module "httpd" {
   source = "./modules/httpd"
@@ -20,14 +21,9 @@ module "keda" {
   depends_on = [module.kong]
 }
 
-module "prometheus" {
-  source = "./modules/prometheus"
-  depends_on = [module.keda]
-}
-
-module "grafana" {
-  source = "./modules/grafana"
-  depends_on = [module.prometheus]
+module "rancher" {
+  source = "./modules/rancher"
+  depends_on = [module.ingress]
 }
 
 module "ingress" {
@@ -35,7 +31,4 @@ module "ingress" {
   depends_on = [module.grafana]
 }
 
-module "btcpay" {
-  source = "./modules/btcpay"
-  depends_on = [module.ingress]
-}
+
