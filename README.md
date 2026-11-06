@@ -3,7 +3,7 @@
 
 
 ## AWS | Rancher 
-Multi-Cluster Management: Centralizes the administration of multiple Kubernetes clusters (such as RKE2, K3s, EKS, AKS, and GKE) across on-premises, cloud, and edge environments
+Multi-Cluster Management: Centralizes the administration of multiple Kubernetes clusters (such as RKE2, K3s, EKS, AKS, and GKE) across on-premises, cloud, and edge environments.
 
 
 
