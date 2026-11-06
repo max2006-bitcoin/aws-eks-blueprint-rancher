@@ -1,14 +1,13 @@
 
-resource "kubernetes_ingress_v1" "grafana" {
+
+resource "kubernetes_ingress_v1" "rancher" {
   metadata {
-    name      = "ingress-route-grafana"
-    namespace = "default"
+    name      = "ingress-route-rancher"
+    namespace = "cattle-system"
+
     annotations = {
-      "konghq.com/strip-path" = "true"
-      # Optional:
-      # "konghq.com/protocols"                 = "https"
-      # "konghq.com/https-redirect-status-code" = "301"
-      # "cert-manager.io/cluster-issuer"      = "letsencrypt-prod"
+      "konghq.com/protocols"  = "https"
+      "konghq.com/strip-path" = "false"
     }
   }
 
@@ -16,19 +15,22 @@ resource "kubernetes_ingress_v1" "grafana" {
     ingress_class_name = "kong"
 
     tls {
-      hosts       = ["monitor.crypterio.co"]
-      secret_name = "loki-tls"
+      hosts       = ["rancher.crypterio.co"]
+      secret_name = "rancher-tls"
     }
 
     rule {
-      host = "monitor.crypterio.co"
+      host = "rancher.crypterio.co"
+
       http {
         path {
           path      = "/"
           path_type = "Prefix"
+
           backend {
             service {
-              name = "grafana"
+              name = "rancher"
+
               port {
                 number = 80
               }
@@ -39,4 +41,3 @@ resource "kubernetes_ingress_v1" "grafana" {
     }
   }
 }
-
