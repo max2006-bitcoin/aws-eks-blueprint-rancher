@@ -7,16 +7,15 @@ Multi-Cluster Management: Centralizes the administration of multiple Kubernetes 
 
 
 
-
 🎯 Architecture Overview
 ```
-🔐 Security vulnerabilities — insecure code that attackers could exploit
-🐛 Bugs — code likely to cause runtime problems
-🧹 Code smells — code that is difficult to maintain or unnecessarily complex
-📋 Duplicated code
-🧪 Test coverage — how much code is covered by tests
-📐 Code quality — maintainability and reliability
-🔎 Security Hotspots — code that requires security review
+Multi-cluster management – Manage multiple Kubernetes clusters from one dashboard.
+Cluster provisioning – Create and configure Kubernetes clusters.
+Cluster monitoring – Monitor cluster health and resources.
+Access control (RBAC) – Manage users, teams, and permissions.
+Application deployment – Deploy applications using Helm charts.
+GitOps integration – Integrate with Fleet for continuous deployment.
+Security and governance – Apply policies and manage cluster configurations.
 ```
 
 
