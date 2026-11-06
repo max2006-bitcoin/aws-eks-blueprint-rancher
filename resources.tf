@@ -1,5 +1,4 @@
 
-
 ###  ---  Application  ---  ###
 module "httpd" {
   source = "./modules/httpd"
@@ -23,12 +22,12 @@ module "keda" {
 
 module "rancher" {
   source = "./modules/rancher"
-  depends_on = [module.ingress]
+  depends_on = [module.keda]
 }
 
 module "ingress" {
   source = "./modules/ingress"
-  depends_on = [module.grafana]
+  depends_on = [module.rancher]
 }
 
 
